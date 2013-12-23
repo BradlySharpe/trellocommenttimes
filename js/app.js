@@ -38,7 +38,6 @@ var app = {
             temp,
             dEndDate = null,
             dStartDate = null;
-
         if (startDate.val() !== ""){
             dDate = startDate.val().split("/");
             dStartDate = new Date(dDate[2], dDate[1]-1, dDate[0]);
@@ -345,6 +344,7 @@ var app = {
         app.UpdateButton("btnRunPrev", true, 'btnBlue');
         app.UpdateButton("btnExport", true, 'btnRed');
         $("#status").html("<b>Status: </b> Fetching Trello Data");
+        $("#times").empty();
         var lists = $("#ListsCheckboxes input[type=checkbox]");
         $.each(lists, function(index, cb){
             if (cb.checked === true){
